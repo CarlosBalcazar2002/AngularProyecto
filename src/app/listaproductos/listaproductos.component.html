@@ -1,0 +1,32 @@
+<header class="py-4">
+  <div class="container text-center">
+    <h1 class="text-titulo"><strong>Productos</strong></h1>
+  </div>
+</header>
+<div class="row animated fadeIn faster">
+  <div class="col-md-4" *ngFor="let producto of productos; let i = index">
+    <div class="card product-card mb-3" style="width: 18rem">
+      <img
+        [src]="producto.imagenurl"
+        class="card-img-top product-img"
+        alt="{{ producto.nombre }}"
+      />
+      <div class="card-body product-details">
+        <h5 class="card-title text-titulo">
+          <strong>{{ producto.nombre }}</strong>
+        </h5>
+        <p class="card-text">
+          <strong>Descripción:</strong> {{ producto.descripcion }}<br />
+        </p>
+        <p class="text-success">
+          <strong>Bs:</strong> {{ producto.precio }}<br />
+        </p>
+        <a
+          [routerLink]="['/detalle-producto', producto.idproductos]"
+          class="btn btn-info text-white"
+          >Más Detalles</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<h4 class="py-5">Lista De Suscripcion</h4>
+<table class="table mt-3 animated fadeIn faster animated fadeIn faster">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">nombre</th>
+        <th scope="col">correo</th>     
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let suscripcion of suscripciones; let i = index">
+        <td>{{ suscripcion.idsuscriptores }}</td>
+        <td>{{ suscripcion.nombre }}</td>
+        <td>{{ suscripcion.correo }}</td>     
+      </tr>
+      
+    </tbody>
+  </table>
+  

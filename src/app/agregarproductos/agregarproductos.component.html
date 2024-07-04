@@ -1,0 +1,97 @@
+<h4 class="py-5">Añadir Productos</h4>
+<form autocomplete="off" (ngSubmit)="guardar(forma)" #forma="ngForm">
+  <!-- Nombre -->
+  <div class="form-group row ">
+    <label class="col-2 col-form-label">Nombre:</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="text"
+        name="nombre"
+        placeholder="Nombre..."
+        [class.is-invalid]="nombre.invalid && nombre.touched"
+        [(ngModel)]="productoModel.nombre"
+        required
+        minlength="5"
+        #nombre="ngModel"
+      />
+      <small *ngIf="nombre.invalid && nombre.touched" class="form-text text-danger">Ingrese 5 letras</small>
+    </div>
+  </div>
+  <!-- Descripción -->
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Descripción:</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="text"
+        name="descripcion"
+        placeholder="Descripción..."
+        [class.is-invalid]="descripcion.invalid && descripcion.touched"
+        [(ngModel)]="productoModel.descripcion"
+        required
+        minlength="10"
+        #descripcion="ngModel"
+      />
+      <small *ngIf="descripcion.invalid && descripcion.touched" class="form-text text-danger">Ingrese al menos 10 letras</small>
+    </div>
+  </div>
+  <!-- Precio -->
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Precio:</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="number"
+        name="precio"
+        placeholder="Precio..."
+        [class.is-invalid]="precio.invalid && precio.touched"
+        [(ngModel)]="productoModel.precio"
+        required
+        min="0.01"
+        #precio="ngModel"
+      />
+      <small *ngIf="precio.invalid && precio.touched" class="form-text text-danger">Ingrese un precio válido</small>
+    </div>
+  </div>
+  <!-- Cantidad -->
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Cantidad:</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="number"
+        name="cantidad"
+        placeholder="Cantidad..."
+        [class.is-invalid]="cantidad.invalid && cantidad.touched"
+        [(ngModel)]="productoModel.cantidad"
+        required
+        min="1"
+        #cantidad="ngModel"
+      />
+      <small *ngIf="cantidad.invalid && cantidad.touched" class="form-text text-danger">Ingrese una cantidad válida</small>
+    </div>
+  </div>
+  <!-- Imagen URL -->
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Imagen URL:</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="text"
+        name="imagenurl"
+        placeholder="URL de la imagen..."
+        [class.is-invalid]="imagenurl.invalid && imagenurl.touched"
+        [(ngModel)]="productoModel.imagenurl"
+        required
+        #imagenurl="ngModel"
+      />
+      <small *ngIf="imagenurl.invalid && imagenurl.touched" class="form-text text-danger">Ingrese una URL válida</small>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-8 offset-2">
+      <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+    </div>
+  </div>
+</form>

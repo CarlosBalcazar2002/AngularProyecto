@@ -118,26 +118,48 @@
   </div>
 </form>
 
-<!-- Tabla para mostrar usuarios añadidos -->
 <hr />
 <h4>Usuarios Añadidos</h4>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Correo</th>
-      <th>Pais</th>
-      <th>Genero</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of usuarios">
-      <td>{{ user.nombre }}</td>
-      <td>{{ user.apellido }}</td>
-      <td>{{ user.correo }}</td>
-      <td>{{ user.pais }}</td>
-      <td>{{ user.genero }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th> Variable </th>
+          <th> Pipe Usados</th>
+          <th> Salida </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let usuario of usuarios">
+          <tr>
+            <td >Nombre : {{usuario.nombre}}</td>
+          <td>uppercase</td>
+          <td>{{ usuario.nombre | uppercase }}</td>
+          </tr>
+          <tr>
+            <td>Apellido : {{usuario.apellido}}</td>
+            <td>uppercase</td>
+            <td>{{ usuario.apellido | uppercase }}</td>
+          </tr>
+          <tr>
+            <td>Correo : {{usuario.correo}}</td>
+            <td>json</td>
+            <td>{{ usuario.correo | json}}</td>
+          </tr>
+          <tr>
+            <td>Pais : {{usuario.pais}}</td>
+            <td>json</td>
+            <td>{{ usuario.pais | json}}</td>
+          </tr>
+          <tr>
+            <td>Genero : {{usuario.genero}}</td>
+            <td>lowercase</td>
+            <td>{{ usuario.genero | lowercase }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+

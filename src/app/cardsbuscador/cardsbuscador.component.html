@@ -1,0 +1,39 @@
+<header class="py-4">
+  <div class="container text-center">
+    <h1 class="text-titulo"><strong>Resultados de Búsqueda</strong></h1>
+  </div>
+</header>
+<div class="container">
+  <div class="row animated fadeIn faster">
+    <div
+      class="col-md-4 mb-3"
+      *ngFor="let producto of productosFiltrados; let i = index"
+    >
+      <div class="card product-card h-100" style="width: 100%">
+        <img
+          [src]="producto.imagenurl"
+          class="card-img-top product-img"
+          alt="{{ producto.nombre }}"
+        />
+        <div class="card-body product-details">
+          <h5 class="card-title text-titulo">
+            <strong>{{ producto.nombre }}</strong>
+          </h5>
+          <p class="card-text">
+            <strong>Descripción:</strong> {{ producto.descripcion }}<br />
+          </p>
+          <p class="text-success">
+            <strong>Bs:</strong> {{ producto.precio }}<br />
+          </p>
+          <button
+            (click)="verProducto(producto)"
+            type="button"
+            class="btn btn-primary btn-block"
+          >
+            Ver Detalles
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

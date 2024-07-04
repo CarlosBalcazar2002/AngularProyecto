@@ -1,0 +1,24 @@
+<div class="py-5">
+  <h1>Nombre del producto: {{ producto.nombre }}</h1>
+  <hr />
+  <div class="row">
+      <div class="col-md-4">
+        <img
+        [src]="producto.imagenurl"
+          class="img-fluid"
+          [alt]="producto.nombre"
+        />
+        <br /><br />
+        <a href="lista" class="btn btn-danger btn-block">
+          Regresar
+        </a>
+      </div>
+      <div class="col-md-8">
+        <h1>{{ producto.nombre }}</h1>
+        <hr />
+        <h2>Precio: {{ producto.precio }}</h2>
+        <p>Descripción: {{ producto.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+

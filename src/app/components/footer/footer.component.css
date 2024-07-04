@@ -1,0 +1,51 @@
+.footer {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    color: #343a40;
+    text-align: left;
+}
+
+.footer h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color:#e83283;
+}
+
+.footer p,
+.footer a {
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.footer a:hover {
+    color: #343a40;
+    text-decoration: none;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+#suscripcionForm .form-control {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#suscripcionForm button {
+    border-radius: 0;
+}
+
+#message-container {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: green;
+}
+
+

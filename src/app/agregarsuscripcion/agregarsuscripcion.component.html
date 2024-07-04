@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+      <h4>Suscríbete</h4>
+      <!-- Formulario de suscripción -->
+      <form #suscripcionForm="ngForm" (ngSubmit)="guardar(suscripcionForm)">
+        <div class="mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nombre"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="suscripcionModel.nombre"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Correo Electrónico"
+            id="correo"
+            name="correo"
+            [(ngModel)]="suscripcionModel.correo"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-dark" type="submit">Suscribirse</button>
+        </div>
+        <!-- Añade una etiqueta div con un identificador único para contener el mensaje -->
+        <div id="message-container" class="mensaje-exito"></div>
+      </form>
+    </div>
+</div>
